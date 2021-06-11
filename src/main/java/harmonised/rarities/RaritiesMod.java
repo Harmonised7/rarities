@@ -1,10 +1,13 @@
 package harmonised.rarities;
 
+import harmonised.rarities.commands.RaritiesCommand;
+import harmonised.rarities.config.Rarities;
 import harmonised.rarities.events.EventHandler;
 import harmonised.rarities.network.NetworkHandler;
 import harmonised.rarities.util.Reference;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -30,11 +33,18 @@ public class RaritiesMod
     public RaritiesMod()
     {
         FMLJavaModLoadingContext.get().getModEventBus().addListener( this::modsLoading );
+        MinecraftForge.EVENT_BUS.addListener( this::registerCommands );
     }
 
     private void modsLoading( FMLCommonSetupEvent event )
     {
         NetworkHandler.registerPackets();
+        Rarities.init();
         MinecraftForge.EVENT_BUS.register( EventHandler.class );
+    }
+
+    private void registerCommands( RegisterCommandsEvent event )
+    {
+        RaritiesCommand.register( event.getDispatcher() );
     }
 }

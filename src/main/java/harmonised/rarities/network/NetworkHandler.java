@@ -14,9 +14,9 @@ public class NetworkHandler
     {
         int index = 0;
 
-        RaritiesMod.HANDLER.registerMessage( index++, MessageConfig.class, MessageConfig::encode, MessageConfig::decode, MessageConfig::handlePacket ); }
+        RaritiesMod.HANDLER.registerMessage( index++, MessageRarities.class, MessageRarities::encode, MessageRarities::decode, MessageRarities::handlePacket ); }
 
-    public static void sendToPlayer( MessageConfig packet, ServerPlayerEntity player )
+    public static void sendToPlayer(MessageRarities packet, ServerPlayerEntity player )
     {
         RaritiesMod.HANDLER.sendTo( packet, player.connection.getNetworkManager(), NetworkDirection.PLAY_TO_CLIENT );
     }

@@ -1,2 +1,12 @@
 {
+  "rarities.raritiesReloaded": "Rarities Successfully Reloaded!",
+  "rarities.common": "Common",
+  "rarities.uncommon": "Uncommon",
+  "rarities.rare": "Rare",
+  "rarities.epic": "Epic",
+  "rarities.legendary": "Legendary",
+  "rarities.mythical": "Mythical",
+  "rarities.trascendant": "Transcendant",
+  "rarities.supreme": "Supreme",
+  "rarities.ultimate": "Ultimate"
 }
