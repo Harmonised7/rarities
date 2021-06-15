@@ -3,8 +3,6 @@ package harmonised.rarities.client;
 import harmonised.rarities.config.Rarities;
 import harmonised.rarities.config.Rarity;
 import harmonised.rarities.util.Reference;
-import javafx.scene.layout.Priority;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.Color;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TranslationTextComponent;
